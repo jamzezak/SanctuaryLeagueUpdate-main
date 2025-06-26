@@ -1,0 +1,28 @@
+{
+  "name": "sanctuary-league-update",
+  "version": "1.0.0",
+  "description": "A League of Legends player management web application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamzezak/SanctuaryLeagueUpdate-main.git"
+  },
+  "keywords": ["league-of-legends", "riot-api", "player-management", "web-app"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamzezak/SanctuaryLeagueUpdate-main/issues"
+  },
+  "homepage": "https://github.com/jamzezak/SanctuaryLeagueUpdate-main#readme",
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.16.2"
+  }
+}

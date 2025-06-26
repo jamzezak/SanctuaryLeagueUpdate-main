@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Player List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <h1>Sanctuary League Players (NA)</h1>
+
+    <!-- Navigation Tabs -->
+    <nav class="main-nav" aria-label="Main navigation">
+        <button type="button" id="tabPlayers" class="tab-btn active">Players</button>
+        <button type="button" id="tabStats" class="tab-btn">Stats</button>
+    </nav>
+
+    <main>
+        <div id="playerControls">
+            <!-- Add Player Form -->
+            <form id="addPlayerForm" autocomplete="off">
+                <input type="text" id="summonerName" placeholder="Summoner Name" required autocomplete="off">
+                <input type="text" id="summonerTag" placeholder="Tag (e.g. NA1)" required autocomplete="off">
+                <input type="text" id="roles" placeholder="Roles (comma separated)" required autocomplete="off">
+                <button type="submit">Add Player</button>
+                <span id="addPlayerMsg"></span>
+            </form>
+
+            <!-- Controls -->
+            <div class="controls">
+                <input type="text" id="searchBar" placeholder="Search by name or tag" autocomplete="off">
+                <select id="roleFilter">
+                    <option value="">Filter by role</option>
+                    <option value="top">Top</option>
+                    <option value="jungle">Jungle</option>
+                    <option value="mid">Mid</option>
+                    <option value="adc">ADC</option>
+                    <option value="support">Support</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Players Section -->
+        <section id="playersSection">
+            <div id="playerList" class="player-grid">
+                <div class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p class="message">Loading players...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="statsSection" style="display:none;">
+            <h2>League Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Player Count</h3>
+                    <div class="stat-value" id="totalPlayers">0</div>
+                    <div class="stat-label">Total Players</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Ranked Players</h3>
+                    <div class="stat-value" id="rankedPlayers">0</div>
+                    <div class="stat-label">Have Ranks</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Average Level</h3>
+                    <div class="stat-value" id="averageLevel">0</div>
+                    <div class="stat-label">Summoner Level</div>
+                </div>
+            </div>
+            
+            <div class="stats-charts">
+                <div class="chart-section">
+                    <h3>Role Distribution</h3>
+                    <div id="roleChart" class="chart-container">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-section">
+                    <h3>Rank Distribution</h3>
+                    <div id="rankChart" class="chart-container">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
